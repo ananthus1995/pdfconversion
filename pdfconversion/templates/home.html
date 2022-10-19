@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+
+<form method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+<div class=" p-3  row" >
+
+
+             <div class="">
+{% for field in form %}
+            {{ field.label_tag }}
+
+             </label>
+        {{ field }}
+
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+
+      {% endfor %}
+         </div>
+
+
+
+</div>
+    <div class="mb-3 text-right">
+
+<button class=" btn btn-primary rounded" type="submit">Generate Report</button>
+</div>
+
+</form>
+
+{%endblock%}

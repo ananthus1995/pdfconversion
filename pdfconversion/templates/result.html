@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{%load static%}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>consultaionpdf</title>
+
+</head>
+
+<body>
+ <div class="header">
+            <img src="{{logo.url}}" alt="logo">
+   <tr>
+            <p style="font-family:Verdana, Geneva, sans-serif; font-weight:600; font-size:17px;" align="right">{{clinicname}}</p>
+          </tr>
+         <br>
+   <br>
+   <hr>
+        </div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="2"><img src="logo.png" width="150"  /></td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="49%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+          <tr>
+
+          </tr>
+          <tr>
+            <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:14px;">Physician Details</td>
+          </tr>
+          <tr>
+            <td style="font-family:Verdana, Geneva, sans-serif; font-weight:500; font-size:14px;">Name: {{physicnananme}}</td>
+          </tr>
+
+            <td style="font-family:Verdana, Geneva, sans-serif; font-weight:500; font-size:14px;">Mob: {{physician_number}}</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          </table></td>
+      </tr>
+    </table></td>
+    <td width="51%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="right"><img src="logo.png" alt="" width="150"  /></td>
+      </tr>
+      <tr>
+        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;" align="right">Consultation Date:</td>
+      </tr>
+      <tr>
+        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;"  align="right">{{consult_data}}</td>
+      </tr>
+      <tr>
+        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;"  align="right">Patient Details</td>
+      </tr>
+      <tr>
+        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:500; font-size:14px;" align="right">Name: {{patient_fname}} {{patient_lname}}</td>
+      </tr>
+      <tr>
+        <td style="font-family:Verdana, Geneva, sans-serif; font-weight:500; font-size:13px;" align="right">Mob:{{patient_number}}</td>
+      </tr>
+
+
+    </table></td>
+  </tr>
+
+
+
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:13px;" colspan="2">Chief Complaint:</td>
+  </tr>
+  <tr>
+    <td  colspan="2">{{chiefcomplaint|safe}}</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:400; font-size:13px;" colspan="2">Consultation Note:</td>
+  </tr>
+  <tr>
+    <td  colspan="2">{{consultnote|safe}}</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="font-family:Verdana, Geneva, sans-serif; font-weight:300; font-size:13px;" colspan="2" align="center">Thank You.</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+</table>
+  <div class="footer">
+            This Report is Generated on:{{time}}
+
+        </div>
+
+
+</body>
+</html>
+
