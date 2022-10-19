@@ -2,33 +2,96 @@
 {%block body_block%}
 
 
+
+
+<div class=" p-2 ">
 <form method="POST" enctype="multipart/form-data">
-        {%csrf_token%}
-<div class=" p-3  row" >
+     {%csrf_token%}
+    <div class="container w-75">
 
-
-             <div class="">
-{% for field in form %}
-            {{ field.label_tag }}
-
-             </label>
-        {{ field }}
-
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-
-      {% endfor %}
-         </div>
-
-
-
+<div class="row p-1">
+<div class="col-sm-6">
+<label>Clinic Name:</label>
+    {{form.clinic_Name}}
 </div>
-    <div class="mb-3 text-right">
+<div class="col-sm-6">
+<label>ClinicLogo:</label>
+    {{form.clinic_logo}}
+</div></div>
 
-<button class=" btn btn-primary rounded" type="submit">Generate Report</button>
+    <div class="row p-1">
+ <div class="col-sm-6 ">
+<label>Physician Name:</label>
+{{form.pysician_name}}
+     {%if form.patient_first_name.errors %}
+     <span class="text-danger">{{ form.patient_first_name.errors }}</span>
+     {%endif%}
+</div>
+    <div class="col-sm-6">
+        <label>Physician Contact:</label>
+{{form.pysician_Contact}}
+         {%if form.pysician_Contact.errors %}
+     <span class="text-danger">{{ form.pysician_Contact.errors }}</span>
+     {%endif%}
+</div></div>
+
+    <div class="row p-1">
+
+ <div class="col-sm-6 ">
+     <label>Patient FirstName:</label>
+{{form.patient_first_name}}
+
+      {%if form.patient_first_name.errors %}
+     <span class="text-danger">{{ form.patient_first_name.errors }}</span>
+     {%endif%}
+</div>
+    <div class="col-sm-6">
+        <label>Patient LastName:</label>
+{{form.patient_last_name}}
+</div></div>
+
+
+
+     <div class="row p-1">
+ <div class="col-sm-6 ">
+     <label>Patient Dob:</label>
+{{form.patient_dob}}
+</div>
+    <div class="col-sm-6">
+        <label>Patient Contact:</label>
+{{form.patient_contact}}
+        {%if form.patient_contact.errors %}
+     <span class="text-danger">{{ form.patient_contact.errors }}</span>
+     {%endif%}
+</div></div>
+
+    </div>
+
+
+    <div class="container w-75">
+<div class="title">
+  <span class="chief">Chief Complaint</span>
+  <span class="maxchr">Max 5000 characters allowed</span>
+</div>
+        {{form.chief_complaint}}
+        <div class="title">
+  <span class="chief">Consultation Note</span>
+  <span class="maxchr">Max 5000 characters allowed</span>
+</div>
+        {{form.consultation_note}}
+
+    </div>
+
+
+
+
+
+    <div class="text-center">
+    <button class="btn btn-primary ">GenerateReport</button>
+    </div>
+    </form>
 </div>
 
-</form>
+
 
 {%endblock%}
